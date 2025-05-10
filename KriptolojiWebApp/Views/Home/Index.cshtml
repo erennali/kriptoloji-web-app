@@ -2,24 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<style>
-    body {
-        background-image: url('/background.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        min-height: 100vh;
-    }
 
-    .text-center {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 2rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-    }
-</style>
 
 <div class="text-center">
     <h1 class="display-4">Eren Ali Kriptografi</h1>
+    
+    <div class="crypto-section">
+        <div class="crypto-description">
+            <p>RSA: Asimetrik şifreleme algoritması olan RSA, güvenli veri iletimi için açık ve gizli anahtar çifti kullanır.</p>
+            <a asp-controller="AES" asp-action="Index" class="btn btn-success crypto-button">RSA Şifreleme</a>
+        </div>
+        
+        <div class="crypto-description">
+            <p>AES: Simetrik şifreleme algoritması olan AES, yüksek güvenlik ve hızlı performans sunan modern bir şifreleme standardıdır.</p>
+            <a asp-controller="RSA" asp-action="Index" class="btn btn-success crypto-button">AES Şifreleme</a>
+        </div>
+        
+        <div class="crypto-description">
+            <p>SHA256: Veri bütünlüğünü sağlamak için kullanılan, tek yönlü ve sabit uzunluklu hash fonksiyonudur.</p>
+            <a asp-controller="SHA256" asp-action="Index" class="btn btn-success crypto-button">SHA256 Hash</a>
+        </div>
+
+    </div>
 </div>

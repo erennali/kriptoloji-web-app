@@ -20,6 +20,12 @@ body {
   margin-bottom: 60px;
   background-color: var(--dark-bg);
   color: #ffffff;
+  background-image: url('/background.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -111,4 +117,78 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* Crypto Section Styles */
+.text-center {
+  background-color: rgba(20, 20, 20, 0.85);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  color: #ffffff;
+  border: 1px solid var(--hacker-green);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.crypto-section {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.crypto-description {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.crypto-description p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  background-color: rgba(20, 20, 20, 0.7);
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 3px solid var(--hacker-green);
+}
+
+.crypto-button {
+  margin: 0.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 1px solid var(--hacker-green);
+  color: var(--hacker-green);
+}
+
+.crypto-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--hacker-green);
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+/* Matrix Animation Background */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.matrix-bg video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
 }
