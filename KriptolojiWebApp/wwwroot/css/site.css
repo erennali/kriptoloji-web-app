@@ -192,3 +192,380 @@ body {
   z-index: -1;
   object-fit: cover;
 }
+
+/* Contact Page Styles */
+.contact-link {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-icon {
+    padding: 20px;
+    border: 1px solid var(--hacker-green);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: rgba(20, 20, 20, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 0, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+.contact-icon:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px var(--hacker-green);
+    background-color: rgba(0, 255, 0, 0.1);
+    border-width: 2px;
+}
+
+.contact-icon i {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-icon:hover i {
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 15px var(--hacker-green);
+}
+
+.contact-icon p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-icon small {
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    color: var(--hacker-green);
+    text-shadow: 0 0 5px var(--hacker-green);
+    position: relative;
+    display: inline-block;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--hacker-green);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-title:hover::after {
+    transform: scaleX(1);
+}
+
+.contact-text {
+    color: var(--hacker-green);
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+/* Matrix rain effect for contact cards */
+.contact-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 0, 0.05),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-icon:hover::after {
+    opacity: 1;
+    animation: matrixRain 1.5s linear infinite;
+}
+
+@keyframes matrixRain {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* Glitch effect for contact titles */
+.contact-title {
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+    2% {
+        text-shadow: 2px 0 var(--hacker-green), -2px 0 #ff0000;
+    }
+    4% {
+        text-shadow: 2px 0 var(--hacker-green), -2px 0 #ff0000;
+    }
+    6% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+}
+
+/* Global Cyberpunk Effects */
+.cyber-card {
+    background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid var(--hacker-green);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 0, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+.cyber-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px var(--hacker-green);
+    background-color: rgba(0, 255, 0, 0.1);
+    border-width: 2px;
+}
+
+.cyber-title {
+    color: var(--hacker-green);
+    text-shadow: 0 0 5px var(--hacker-green);
+    position: relative;
+    display: inline-block;
+    animation: glitch 2s infinite;
+}
+
+.cyber-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--hacker-green);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.cyber-title:hover::after {
+    transform: scaleX(1);
+}
+
+.cyber-text {
+    color: var(--hacker-green);
+    text-shadow: 0 0 5px var(--hacker-green);
+}
+
+.cyber-button {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 0, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.cyber-button:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 15px var(--hacker-green);
+    transform: translateY(-2px);
+}
+
+.cyber-button:hover::before {
+    left: 100%;
+}
+
+.cyber-input {
+    background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid var(--hacker-green);
+    color: var(--hacker-green);
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    box-shadow: 0 0 10px var(--hacker-green);
+    border-width: 2px;
+    outline: none;
+}
+
+.cyber-table {
+    border: 1px solid var(--hacker-green);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cyber-table th {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: var(--hacker-green);
+    border-bottom: 2px solid var(--hacker-green);
+}
+
+.cyber-table td {
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+    color: #fff;
+}
+
+.cyber-table tr:hover {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+/* Matrix rain effect for all cyber elements */
+.cyber-card::after,
+.cyber-button::after,
+.cyber-input::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 0, 0.05),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-card:hover::after,
+.cyber-button:hover::after,
+.cyber-input:focus::after {
+    opacity: 1;
+    animation: matrixRain 1.5s linear infinite;
+}
+
+/* Glitch effect for all cyber titles */
+.cyber-title {
+    animation: glitch 2s infinite;
+}
+
+/* Existing animations */
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+@keyframes matrixRain {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+    2% {
+        text-shadow: 2px 0 var(--hacker-green), -2px 0 #ff0000;
+    }
+    4% {
+        text-shadow: 2px 0 var(--hacker-green), -2px 0 #ff0000;
+    }
+    6% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--hacker-green);
+    }
+}
+
+/* Update existing contact styles to use new classes */
+.contact-icon {
+    composes: cyber-card;
+}
+
+.contact-title {
+    composes: cyber-title;
+}
+
+.contact-text {
+    composes: cyber-text;
+}

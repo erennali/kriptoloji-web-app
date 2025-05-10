@@ -1,8 +1,92 @@
-
-
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "İletişim";
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center">
+                <h2 class="card-title mb-4 contact-title">İLETİŞİM BİLGİLERİ</h2>
+                
+                <div class="crypto-description">
+                    <div class="mb-4">
+                        <h4 class="contact-title">EREN ALİ KOCA</h4>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-4">
+                            <a href="mailto:info@erenalikoca.com.tr" class="contact-link">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope fa-3x mb-2 contact-text"></i>
+                                    <p class="mt-2 contact-text">E-MAIL</p>
+                                    <small class="contact-text">info@erenalikoca.com.tr</small>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <a href="https://github.com/erennali" target="_blank" class="contact-link">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github fa-3x mb-2 contact-text"></i>
+                                    <p class="mt-2 contact-text">GITHUB</p>
+                                    <small class="contact-text">github.com/erennali</small>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <a href="https://linkedin.com/in/erenalikoca" target="_blank" class="contact-link">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin fa-3x mb-2 contact-text"></i>
+                                    <p class="mt-2 contact-text">LINKEDIN</p>
+                                    <small class="contact-text">linkedin.com/in/erenalikoca</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contact-link {
+        text-decoration: none;
+        display: block;
+    }
+    
+    .contact-icon {
+        padding: 20px;
+        border: 1px solid var(--hacker-green);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        background-color: rgba(20, 20, 20, 0.7);
+    }
+    
+    .contact-icon:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px var(--hacker-green);
+        background-color: rgba(0, 255, 0, 0.1);
+    }
+    
+    .contact-icon i {
+        transition: all 0.3s ease;
+    }
+    
+    .contact-icon:hover i {
+        transform: scale(1.2);
+        text-shadow: 0 0 10px var(--hacker-green);
+    }
+    
+    .contact-icon p {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    
+    .contact-icon small {
+        font-size: 0.9rem;
+    }
+</style>
