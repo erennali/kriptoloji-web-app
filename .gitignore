@@ -1,0 +1,86 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+## Rider IDE
+.idea/
+*.sln.iml
+
+## Build results
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]ogs/
+
+## Rider Local configuration
+.idea/
+*.sln.iml
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## ASP.NET temp files
+*.vspscc
+.vs/
+.vscode/
+
+## NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+## OS generated files
+.DS_Store
+*.swp
+*.bak
+*.tmp
+*.log
+
+## Web output
+wwwroot/lib/
+node_modules/
+
+# Publish output
+publish/
+*.Publish.xml
+*.pubxml
+*.pdb
+*.mdb
+*.dbmdl
+
+# Others
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+*.DotSettings
+
+# Rider caches
+.idea/
+.idea/*
+
+# SQLite / local databases
+*.db
+*.mdf
+*.ldf
+
+# Environment files
+.env
+.env.*
+
+# Rider HTTP client
+http-requests-log.http
