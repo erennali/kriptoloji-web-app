@@ -1,8 +1,78 @@
-
-
 @{
-    ViewBag.Title = "SHA 256";
+    ViewBag.Title = "SHA-256 Encryption";
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<div class="container mt-5 cyber-theme">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="btn-group w-100" role="group">
+                <a asp-controller="SHA256" asp-action="Index" class="btn btn-success cyber-button active">
+                    <i class="fas fa-lock"></i> ENCRYPT
+                </a>
+                <a asp-controller="SHA256" asp-action="Decrypt" class="btn btn-success cyber-button">
+                    <i class="fas fa-unlock"></i> DECRYPT
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mb-4 text-center cyber-title">SHA-256 ENCRYPTION</h2>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="inputText" class="form-label">Girdi:</label>
+                <textarea id="inputText" class="form-control cyber-input" rows="5" placeholder="Şifrelenecek metni girin..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <button id="encryptButton" class="btn btn-success cyber-button">
+                <i class="fas fa-lock"></i> Encrypt
+            </button>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="outputText" class="form-label">Encrypted Çıktı:</label>
+                <textarea id="outputText" class="form-control cyber-output" rows="5" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#encryptButton').on('click', function() {
+                const inputText = $('#inputText').val();
+                
+                if (!inputText) {
+                    alert('Şifrelemek için metin girin!');
+                    return;
+                }
+
+                $.ajax({
+                    url: '@Url.Action("Encrypt", "SHA256")',
+                    type: 'POST',
+                    data: { input: inputText },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#outputText').val(response.result);
+                        } else {
+                            alert(response.message || 'Bir hata oluştu!');
+                        }
+                    },
+                    error: function() {
+                        alert('İşlem sırasında bir hata oluştu!');
+                    }
+                });
+            });
+        });
+    </script>
+}

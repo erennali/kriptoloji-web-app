@@ -455,16 +455,17 @@ body {
 .cyber-input {
     background-color: rgba(20, 20, 20, 0.7);
     border: 1px solid var(--hacker-green);
-    color: var(--hacker-green);
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 .cyber-input:focus {
+    background-color: rgba(20, 20, 20, 0.9);
+    border-color: var(--hacker-green);
     box-shadow: 0 0 10px var(--hacker-green);
-    border-width: 2px;
     outline: none;
+    z-index: 2;
 }
 
 .cyber-table {
@@ -568,4 +569,221 @@ body {
 
 .contact-text {
     composes: cyber-text;
+}
+
+/* Cyber Theme Styles */
+.cyber-title {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.cyber-section {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.cyber-input {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+}
+
+.cyber-input:focus {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+}
+
+.cyber-output {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    resize: none;
+}
+
+.cyber-output:focus {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+    outline: none;
+}
+
+.cyber-button {
+    background-color: transparent;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.cyber-button:disabled {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-color: #00ff00;
+    opacity: 0.7;
+}
+
+.cyber-card {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid #00ff00;
+}
+
+.cyber-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #00ff00;
+    color: #00ff00;
+}
+
+.cyber-alert {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
+
+.cyber-theme .form-check-label {
+    color: #00ff00;
+}
+
+.cyber-theme .form-label {
+    color: #00ff00;
+}
+
+.cyber-theme .btn-group .btn {
+    border-color: #00ff00;
+    color: #00ff00;
+    background-color: transparent;
+}
+
+.cyber-theme .btn-group .btn.active {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.cyber-theme .btn-group .btn:hover:not(.active) {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.cyber-input::placeholder {
+    color: rgba(0, 255, 0, 0.3) !important;
+}
+
+.cyber-input:-ms-input-placeholder {
+    color: rgba(0, 255, 0, 0.3) !important;
+}
+
+.cyber-input::-ms-input-placeholder {
+    color: rgba(0, 255, 0, 0.3) !important;
+}
+
+.cyber-theme .form-check {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
+.cyber-theme .form-check-input {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid var(--hacker-green);
+    cursor: pointer;
+}
+
+.cyber-theme .form-check-input:checked {
+    background-color: var(--hacker-green);
+    border-color: var(--hacker-green);
+}
+
+.cyber-theme .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 0, 0.25);
+    border-color: var(--hacker-green);
+}
+
+.cyber-theme .form-check-label {
+    position: relative;
+    z-index: 1;
+    color: var(--hacker-green);
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.cyber-theme .form-group {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .form-label {
+    position: relative;
+    z-index: 1;
+    color: var(--hacker-green);
+    margin-bottom: 0.5rem;
+}
+
+.cyber-theme .form-control {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .card {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .row {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .col-md-6 {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .col-md-12 {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .btn-group {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .btn {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .alert {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .spinner-border {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-theme .button-text {
+    position: relative;
+    z-index: 1;
 }
