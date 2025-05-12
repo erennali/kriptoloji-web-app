@@ -1,6 +1,84 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Gizlilik Politikası";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container mt-5 cyber-theme">
+    <h2 class="mb-4 text-center cyber-title">GİZLİLİK POLİTİKASI</h2>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Veri Toplama ve Kullanım</h3>
+        <p class="cyber-text">
+            Kriptoloji web uygulamamız, verileri tarayıcınız içinde yerel olarak işler. Şifrelenmiş/çözülmüş verilerinizi sunucularımıza depolamaz veya iletmeyiz. Tüm kriptografik işlemler (AES, RSA, SHA256) maksimum güvenlik ve gizlilik sağlamak için istemci tarafında gerçekleştirilir.
+        </p>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Güvenlik Önlemleri</h3>
+        <p class="cyber-text">
+            Verilerinizi korumak için endüstri standardı güvenlik uygulamaları kullanıyoruz:
+        </p>
+        <ul class="cyber-text">
+            <li>Tüm kriptografik işlemler tarayıcınızda yerel olarak gerçekleştirilir</li>
+            <li>Hiçbir veri sunucularımızda depolanmaz</li>
+            <li>Şifreleme için güvenli algoritmalar kullanıyoruz (AES-256, RSA, SHA256)</li>
+            <li>Tüm iletişimler HTTPS ile şifrelenir</li>
+        </ul>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Veri İşleme</h3>
+        <p class="cyber-text">
+            Şifreleme/çözme hizmetlerimizi kullandığınızda:
+        </p>
+        <ul class="cyber-text">
+            <li>Girdi verileriniz tamamen tarayıcınız içinde işlenir</li>
+            <li>Şifreleme anahtarları ve başlangıç vektörleri (IV) yerel olarak oluşturulur</li>
+            <li>Hiçbir veri sunucularımızda kaydedilmez veya depolanmaz</li>
+            <li>Sonuçlar sadece size gösterilir ve kaydedilmez</li>
+        </ul>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Çerezler ve Analitik</h3>
+        <p class="cyber-text">
+            Sadece site işlevselliği için gerekli minimum çerezleri kullanıyoruz. Gizliliğinizi tehlikeye atabilecek izleme çerezleri veya analitik araçları kullanmıyoruz.
+        </p>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Üçüncü Taraf Hizmetleri</h3>
+        <p class="cyber-text">
+            Uygulamamız, verilerinize erişebilecek herhangi bir üçüncü taraf hizmetiyle entegre değildir. Tüm kriptografik işlemler standart web API'leri ve kendi uygulamamız kullanılarak gerçekleştirilir.
+        </p>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Haklarınız</h3>
+        <p class="cyber-text">
+            Herhangi bir kişisel veri depolamadığımız için, bilgileriniz üzerinde tam kontrol sizdedir. Şunları yapabilirsiniz:
+        </p>
+        <ul class="cyber-text">
+            <li>Geçici verileri kaldırmak için tarayıcı önbelleğinizi temizleyebilirsiniz</li>
+            <li>Uygulamayı gizli/özel tarama modunda kullanabilirsiniz</li>
+            <li>Endişeleriniz varsa uygulamayı kullanmamayı seçebilirsiniz</li>
+        </ul>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">Gizlilik Politikası Güncellemeleri</h3>
+        <p class="cyber-text">
+            Bu gizlilik politikasını periyodik olarak güncelleyebiliriz. Herhangi bir değişiklik, son güncelleme tarihiyle birlikte bu sayfada yansıtılacaktır.
+        </p>
+    </div>
+
+    <div class="cyber-section">
+        <h3 class="cyber-title mb-3">İletişim</h3>
+        <p class="cyber-text">
+            Gizlilik politikamız veya veri işleme uygulamalarımız hakkında herhangi bir sorunuz varsa, lütfen iletişim sayfamızdan bizimle iletişime geçin.
+        </p>
+    </div>
+
+    <div class="text-center mt-4">
+        <p class="cyber-text">Son Güncelleme: @DateTime.Now.ToString("dd MMMM yyyy")</p>
+    </div>
+</div>
