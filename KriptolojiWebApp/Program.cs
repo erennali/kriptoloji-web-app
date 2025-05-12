@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ISHA256Service, SHA256Service>();
+builder.Services.AddScoped<IAESService, AESService>();
 
 var app = builder.Build();
 
