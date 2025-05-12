@@ -1,16 +1,16 @@
 using System.Security.Cryptography;
 using System.Text;
 using KriptolojiWebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace KriptolojiWebApp.Services
 {
     public class SHA256Service : ISHA256Service
     {
-        /* Her defada işlenecek kombinasyon sayısı. Değer ne kadar büyükse o kadar çok kombinasyon aynı anda işlenir
-         ancak bellek kullanımı da o kadar artar*/
+        // işlenecek kombinasyon sayısı, değer ne kadar büyükse o kadar çok kombinasyon aynı anda işlenir
         private readonly int _batchSize = 1000;
 
-        /* Paralel işlem sayısı. Bilgisayarın işlemci çekirdek sayısı kadar paralel işlem yapılacak
+        /* paralel işlem sayısı ,bilgisayarın işlemci çekirdek sayısı kadar paralel işlem yapılacak
         CPU kullanaraak işlem hızlandırma*/
         private readonly int _maxParallelTasks = Environment.ProcessorCount;
 
@@ -34,30 +34,58 @@ namespace KriptolojiWebApp.Services
             }
         }
 
+        public async Task<string> HashFileAsync(IFormFile dosya)
+        {
+            if (dosya == null || dosya.Length == 0)
+                return string.Empty;
+
+            using (var sha256 = SHA256.Create())
+            using (var stream = dosya.OpenReadStream())
+            {
+                var hashBytes = await sha256.ComputeHashAsync(stream);
+                var hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+                return hashString;
+            }
+        }
+
+        public async Task<string> HashFileFromPathAsync(string filePath)
+        {
+            if (!File.Exists(filePath))
+                return string.Empty;
+
+            using (var sha256 = SHA256.Create())
+            using (var stream = File.OpenRead(filePath))
+            {
+                var hashBytes = await sha256.ComputeHashAsync(stream);
+                var hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+                return hashString;
+            }
+        }
+
         public async Task<(string result, double seconds)> DecryptAsync(string hash, BruteForceParameters parameters)
         {
             if (string.IsNullOrEmpty(hash))
                 return (string.Empty, 0);
             
             var startTime = DateTime.Now;
-            var kullanilacakKarakterler = new List<char>();
+            var karakterler = new List<char>();
             
             if (parameters.IncludeLowercase)
-                kullanilacakKarakterler.AddRange("abcdefghijklmnopqrstuvwxyz");
+                karakterler.AddRange("abcdefghijklmnopqrstuvwxyz");
             
             if (parameters.IncludeUppercase)
-                kullanilacakKarakterler.AddRange("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+                karakterler.AddRange("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
             
             if (parameters.IncludeNumbers)
-                kullanilacakKarakterler.AddRange("0123456789");
+                karakterler.AddRange("0123456789");
             
             if (parameters.IncludeSpaces)
-                kullanilacakKarakterler.Add(' ');
+                karakterler.Add(' ');
             
             if (parameters.IncludeSpecialChars)
-                kullanilacakKarakterler.AddRange("!@#$%^&*()_+-=[]{}|;:,.<>?");
+                karakterler.AddRange("!@#$%^&*()_+-=[]{}|;:,.<>?");
 
-            if (!kullanilacakKarakterler.Any())
+            if (!karakterler.Any())
                 return ("En az bir karakter seti seçin!", 0);
 
             if (parameters.MaxLength <= 0)
@@ -65,7 +93,7 @@ namespace KriptolojiWebApp.Services
 
             for (int uzunluk = parameters.MinLength; uzunluk <= parameters.MaxLength; uzunluk++)
             {
-                var bulunanSonuc = await TryAllCombinationsParallel(hash, kullanilacakKarakterler, uzunluk);
+                var bulunanSonuc = await TryAllCombinationsParallel(hash, karakterler, uzunluk);
                 if (bulunanSonuc != null)
                 {
                     var endTime = DateTime.Now;

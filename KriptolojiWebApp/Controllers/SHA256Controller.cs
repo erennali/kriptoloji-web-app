@@ -47,6 +47,26 @@ public class SHA256Controller : Controller
     }
 
     [HttpPost]
+    public async Task<IActionResult> HashFile(IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return Json(new { success = false, message = "Dosya seçilmedi veya boş" });
+        }
+
+        try
+        {
+            var hash = await _sha256Service.HashFileAsync(file);
+            return Json(new { success = true, result = hash });
+        }
+        catch (Exception hata)
+        {
+            _logger.LogError(hata, "Dosya hashleme sırasında hata");
+            return Json(new { success = false, message = "Dosya hashleme sırasında bir hata oluştu" });
+        }
+    }
+
+    [HttpPost]
     public async Task<IActionResult> Decrypt([FromBody] DecryptRequest istek)
     {
         if (string.IsNullOrEmpty(istek?.Hash))
