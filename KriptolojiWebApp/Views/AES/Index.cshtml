@@ -18,81 +18,87 @@
         </div>
     </div>
 
-    <h2 class="mb-4 text-center cyber-title">AES ENCRYPTION</h2>
-    
-    <form id="aesForm" asp-action="Sifrele" method="post" class="needs-validation" novalidate>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group mb-3">
-                    <label asp-for="Metin" class="form-label">Şifrelenecek Metin</label>
-                    <textarea asp-for="Metin" class="form-control cyber-input" placeholder="Şifrelenecek metni girin..." rows="4" required></textarea>
-                    <span asp-validation-for="Metin" class="text-danger"></span>
-                </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cyber-card p-4" style="position:relative; z-index:2; pointer-events:auto;">
+                <h2 class="cyber-title mb-4">AES Encryption</h2>
+                
+                <form id="aesForm" asp-action="Sifrele" method="post" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Metin" class="cyber-text">Şifrelenecek Metin</label>
+                                <textarea asp-for="Metin" class="form-control cyber-input" placeholder="Şifrelenecek metni girin..." rows="4" required></textarea>
+                                <span asp-validation-for="Metin" class="text-danger"></span>
+                            </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="Anahtar" class="form-label">Anahtar</label>
-                    <div class="input-group">
-                        <input asp-for="Anahtar" class="form-control cyber-input" required />
-                        <button type="button" class="btn btn-success cyber-button" onclick="rastgeleAnahtarOlustur()">
-                            <i class="fas fa-random"></i>
-                        </button>
+                            <div class="form-group mb-3">
+                                <label asp-for="Anahtar" class="cyber-text">Anahtar</label>
+                                <div class="input-group">
+                                    <input asp-for="Anahtar" class="form-control cyber-input" required />
+                                    <button type="button" class="btn btn-success cyber-button" onclick="rastgeleAnahtarOlustur()">
+                                        <i class="fas fa-random"></i>
+                                    </button>
+                                </div>
+                                <span asp-validation-for="Anahtar" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="IV" class="cyber-text">IV (Initialization Vector)</label>
+                                <div class="input-group">
+                                    <input asp-for="IV" class="form-control cyber-input" />
+                                    <button type="button" class="btn btn-success cyber-button" onclick="rastgeleIVOlustur()">
+                                        <i class="fas fa-random"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Mod" class="cyber-text">Şifreleme Modu</label>
+                                <select asp-for="Mod" class="form-control cyber-input">
+                                    <option value="CBC">CBC</option>
+                                    <option value="ECB">ECB</option>
+                                    <option value="CFB">CFB</option>
+                                    <option value="OFB">OFB</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Padding" class="cyber-text">Padding Modu</label>
+                                <select asp-for="Padding" class="form-control cyber-input">
+                                    <option value="PKCS7">PKCS7</option>
+                                    <option value="Zeros">Zeros</option>
+                                    <option value="ANSIX923">ANSIX923</option>
+                                    <option value="ISO10126">ISO10126</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="KeySize" class="cyber-text">Anahtar Boyutu</label>
+                                <select asp-for="KeySize" class="form-control cyber-input">
+                                    <option value="128">128 bit</option>
+                                    <option value="192">192 bit</option>
+                                    <option value="256">256 bit</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <span asp-validation-for="Anahtar" class="text-danger"></span>
-                </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="IV" class="form-label">IV (Initialization Vector)</label>
-                    <div class="input-group">
-                        <input asp-for="IV" class="form-control cyber-input" />
-                        <button type="button" class="btn btn-success cyber-button" onclick="rastgeleIVOlustur()">
-                            <i class="fas fa-random"></i>
-                        </button>
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <button type="submit" class="cyber-button btn-lg">
+                                <i class="fas fa-lock"></i> Şifrele
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </form>
 
-            <div class="col-md-6">
-                <div class="form-group mb-3">
-                    <label asp-for="Mod" class="form-label">Şifreleme Modu</label>
-                    <select asp-for="Mod" class="form-control cyber-input">
-                        <option value="CBC">CBC</option>
-                        <option value="ECB">ECB</option>
-                        <option value="CFB">CFB</option>
-                        <option value="OFB">OFB</option>
-                    </select>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="Padding" class="form-label">Padding Modu</label>
-                    <select asp-for="Padding" class="form-control cyber-input">
-                        <option value="PKCS7">PKCS7</option>
-                        <option value="Zeros">Zeros</option>
-                        <option value="ANSIX923">ANSIX923</option>
-                        <option value="ISO10126">ISO10126</option>
-                    </select>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label asp-for="KeySize" class="form-label">Anahtar Boyutu</label>
-                    <select asp-for="KeySize" class="form-control cyber-input">
-                        <option value="128">128 bit</option>
-                        <option value="192">192 bit</option>
-                        <option value="256">256 bit</option>
-                    </select>
-                </div>
+                <div id="sonucAlani" class="mt-4"></div>
             </div>
         </div>
-
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-success cyber-button btn-lg">
-                    <i class="fas fa-lock"></i> Şifrele
-                </button>
-            </div>
-        </div>
-    </form>
-
-    <div id="sonucAlani" class="mt-4"></div>
+    </div>
 </div>
 
 @section Scripts {

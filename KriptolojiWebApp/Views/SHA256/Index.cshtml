@@ -17,58 +17,48 @@
         </div>
     </div>
 
-    <h2 class="mb-4 text-center cyber-title">SHA-256 ENCRYPTION</h2>
-    
     <div class="row">
         <div class="col-md-12">
-            <div class="form-group">
-                <label for="inputText" class="form-label">Metin Girdisi:</label>
-                <textarea id="inputText" class="form-control cyber-input" rows="5" placeholder="Şifrelenecek metni girin..."></textarea>
-            </div>
-        </div>
-    </div>
+            <div class="cyber-card p-4" style="position:relative; z-index:2; pointer-events:auto;">
+                <h2 class="cyber-title mb-4">SHA-256 Encryption</h2>
+                
+                <div class="cyber-section mb-4">
+                    <h3 class="cyber-title mb-3">Metin Şifreleme</h3>
+                    <div class="form-group mb-3">
+                        <label for="inputText" class="cyber-text">Metin Girdisi:</label>
+                        <textarea id="inputText" class="form-control cyber-input" rows="5" placeholder="Şifrelenecek metni girin..."></textarea>
+                    </div>
 
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <button id="encryptButton" class="btn btn-success cyber-button">
-                <i class="fas fa-lock"></i> Metni Şifrele
-            </button>
-        </div>
-    </div>
+                    <div class="form-group mb-3">
+                        <button id="encryptButton" class="cyber-button">
+                            <i class="fas fa-lock"></i> Metni Şifrele
+                        </button>
+                    </div>
 
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="outputText" class="form-label">Şifrelenmiş Çıktı:</label>
-                <textarea id="outputText" class="form-control cyber-output" rows="5" readonly></textarea>
-            </div>
-        </div>
-    </div>
+                    <div class="form-group mb-3">
+                        <label for="outputText" class="cyber-text">Şifrelenmiş Çıktı:</label>
+                        <textarea id="outputText" class="form-control cyber-input" rows="5" readonly></textarea>
+                    </div>
+                </div>
 
-    <hr class="my-4">
+                <div class="cyber-section">
+                    <h3 class="cyber-title mb-3">Dosya Şifreleme</h3>
+                    <div class="form-group mb-3">
+                        <label for="fileInput" class="cyber-text">Dosya Girdisi:</label>
+                        <input type="file" id="fileInput" class="form-control cyber-input">
+                    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="fileInput" class="form-label">Dosya Girdisi:</label>
-                <input type="file" id="fileInput" class="form-control cyber-input">
-            </div>
-        </div>
-    </div>
+                    <div class="form-group mb-3">
+                        <button id="hashFileButton" class="cyber-button">
+                            <i class="fas fa-file-alt"></i> Dosyayı Hashle
+                        </button>
+                    </div>
 
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <button id="hashFileButton" class="btn btn-success cyber-button">
-                <i class="fas fa-file-alt"></i> Dosyayı Hashle
-            </button>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="fileOutput" class="form-label">Dosya Hash Çıktısı:</label>
-                <textarea id="fileOutput" class="form-control cyber-output" rows="5" readonly></textarea>
+                    <div class="form-group mb-3">
+                        <label for="fileOutput" class="cyber-text">Dosya Hash Çıktısı:</label>
+                        <textarea id="fileOutput" class="form-control cyber-input" rows="5" readonly></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
