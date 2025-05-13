@@ -787,3 +787,100 @@ body {
     position: relative;
     z-index: 1;
 }
+
+/* Index Page Specific Styles */
+.cyber-subtitle {
+    color: var(--hacker-green);
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    letter-spacing: 2px;
+    animation: glitch 2s infinite;
+}
+
+.crypto-card {
+    height: 100%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.crypto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+.card-icon {
+    color: var(--hacker-green);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.crypto-card:hover .card-icon {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.crypto-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 0, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+.crypto-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 0, 0.05),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.crypto-card:hover::after {
+    opacity: 1;
+    animation: matrixRain 1.5s linear infinite;
+}
+
+.crypto-description h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.crypto-description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.cyber-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-button i {
+    margin-right: 0.5rem;
+}

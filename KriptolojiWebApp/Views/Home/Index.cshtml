@@ -2,26 +2,58 @@
     ViewData["Title"] = "Ana Sayfa";
 }
 
-
-
-<div class="text-center">
-    <h1 class="cyber-title">Eren Ali Kriptoloji</h1>
-    
-    <div class="crypto-section">
-        <div class="crypto-description">
-            <p>RSA: Asimetrik şifreleme algoritması olan RSA, güvenli veri iletimi için açık ve gizli anahtar çifti kullanır.</p>
-            <a asp-controller="RSA" asp-action="Index" class="btn btn-success crypto-button">RSA Şifreleme</a>
-        </div>
+<div class="container mt-5">
+    <div class="text-center cyber-theme">
+        <h1 class="cyber-title display-4 mb-4">Eren Ali Kriptoloji</h1>
+        <div class="cyber-subtitle mb-5">Güvenli Şifreleme Sistemleri</div>
         
-        <div class="crypto-description">
-            <p>AES: Simetrik şifreleme algoritması olan AES, yüksek güvenlik ve hızlı performans sunan modern bir şifreleme standardıdır.</p>
-            <a asp-controller="AES" asp-action="Index" class="btn btn-success crypto-button">AES Şifreleme</a>
+        <div class="crypto-section">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="cyber-card crypto-card">
+                        <div class="card-icon">
+                            <i class="fas fa-key fa-3x"></i>
+                        </div>
+                        <div class="crypto-description">
+                            <h3 class="cyber-title">RSA</h3>
+                            <p>Asimetrik şifreleme algoritması olan RSA, güvenli veri iletimi için açık ve gizli anahtar çifti kullanır.</p>
+                            <a asp-controller="RSA" asp-action="Index" class="btn btn-success cyber-button">
+                                <i class="fas fa-lock"></i> RSA 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="cyber-card crypto-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt fa-3x"></i>
+                        </div>
+                        <div class="crypto-description">
+                            <h3 class="cyber-title">AES</h3>
+                            <p>Simetrik şifreleme algoritması olan AES, yüksek güvenlik ve hızlı performans sunan modern bir şifreleme standardıdır.</p>
+                            <a asp-controller="AES" asp-action="Index" class="btn btn-success cyber-button">
+                                <i class="fas fa-lock"></i> AES 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="cyber-card crypto-card">
+                        <div class="card-icon">
+                            <i class="fas fa-fingerprint fa-3x"></i>
+                        </div>
+                        <div class="crypto-description">
+                            <h3 class="cyber-title">SHA256</h3>
+                            <p>Veri bütünlüğünü sağlamak için kullanılan, tek yönlü ve sabit uzunluklu hash fonksiyonudur.</p>
+                            <a asp-controller="SHA256" asp-action="Index" class="btn btn-success cyber-button">
+                                <i class="fas fa-hashtag"></i> SHA256 Hash
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="crypto-description">
-            <p>SHA256: Veri bütünlüğünü sağlamak için kullanılan, tek yönlü ve sabit uzunluklu hash fonksiyonudur.</p>
-            <a asp-controller="SHA256" asp-action="Index" class="btn btn-success crypto-button">SHA256 Hash</a>
-        </div>
-
     </div>
 </div>
