@@ -1,4 +1,3 @@
-using System;
 
 namespace KriptolojiWebApp.Models
 {
