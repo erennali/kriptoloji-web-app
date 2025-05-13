@@ -10,15 +10,15 @@
                 <a href="@Url.Action("Index")" class="btn btn-success cyber-button">
                     <i class="fas fa-lock"></i> ENCRYPT
                 </a>
-                <button type="button" class="btn btn-success cyber-button active">
+                <a href="#" class="btn btn-success cyber-button" style="pointer-events:none; background-color:rgba(0,255,0,0.08); box-shadow:0 0 10px #00ff00, 0 0 20px #00ff0033 inset;" tabindex="-1" aria-disabled="true">
                     <i class="fas fa-unlock"></i> DECRYPT
-                </button>
+                </a>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="cyber-card p-4">
+    <div class="row" style="position:relative; z-index:10; pointer-events:auto;">
+        <div class="col-md-12" style="position:relative; z-index:10; pointer-events:auto;">
+            <div class="cyber-card p-4" style="position:relative; z-index:10; pointer-events:auto;">
                 <h2 class="cyber-title mb-4">RSA Şifre Çözme</h2>
 
                 <div class="form-group mb-3">
@@ -31,8 +31,8 @@
                     <textarea id="privateKey" class="form-control cyber-input" rows="3"></textarea>
                 </div>
 
-                <div class="form-group mb-3">
-                    <button type="button" id="sifreCoz" class="cyber-button">Şifre Çöz</button>
+                <div class="form-group mb-3" style="position:relative; z-index:20; pointer-events:auto;">
+                    <button type="button" id="sifreCoz" class="cyber-button" style="position:relative; z-index:20; pointer-events:auto;">Şifre Çöz</button>
                 </div>
 
                 <div id="sonuc" class="form-group mb-3" style="display: none;">
