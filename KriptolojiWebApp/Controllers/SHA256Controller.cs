@@ -67,7 +67,7 @@ public class SHA256Controller : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Decrypt([FromBody] DecryptRequest istek)
+    public async Task<IActionResult> Decrypt([FromBody] RSADecryptRequest istek)
     {
         if (string.IsNullOrEmpty(istek?.Hash))
         {

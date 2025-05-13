@@ -3,13 +3,13 @@
     Layout = "_Layout";
 }
 
-<div class="container mt-5">
+<div class="container mt-5 cyber-theme">
     <div class="row justify-content-center mb-4">
         <div class="col-md-8">
             <div class="btn-group w-100" role="group">
-                <a href="#" class="btn btn-success cyber-button" style="pointer-events:none; background-color:rgba(0,255,0,0.08); box-shadow:0 0 10px #00ff00, 0 0 20px #00ff0033 inset;" tabindex="-1" aria-disabled="true">
+                <button type="button" class="btn btn-success cyber-button active">
                     <i class="fas fa-lock"></i> ENCRYPT
-                </a>
+                </button>
                 <a href="@Url.Action("Decrypt")" class="btn btn-success cyber-button">
                     <i class="fas fa-unlock"></i> DECRYPT
                 </a>
@@ -22,23 +22,23 @@
                 <h2 class="cyber-title mb-4">RSA Şifreleme</h2>
                 
                 <div class="cyber-section mb-4" style="position:relative; z-index:2; pointer-events:auto;">
-                    <h3 class="cyber-title mb-3">1. Anahtar Oluşturma</h3>
+                    <h3 class="cyber-title mb-3">Key Oluşturma</h3>
                     <div class="mb-3">
                         <button type="button" id="anahtarOlustur" class="cyber-button" style="z-index:3; pointer-events:auto;">
-                            Yeni Anahtar Çifti Oluştur
+                            Key Oluştur
                         </button>
                     </div>
 
                     <div id="anahtarlar" style="display: none;">
                         <div class="form-group mb-3">
-                            <label class="cyber-text">Public Key (Açık Anahtar):</label>
+                            <label class="cyber-text">Public Key:</label>
                             <textarea id="publicKey" class="form-control cyber-input" rows="4" readonly style="background:rgba(0,0,0,0.8); color:#00ff00;"></textarea>
                             <button type="button" class="cyber-button mt-2" onclick="kopyala('publicKey')">
                                 Kopyala
                             </button>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="cyber-text">Private Key (Gizli Anahtar):</label>
+                            <label class="cyber-text">Private Key:</label>
                             <textarea id="privateKey" class="form-control cyber-input" rows="4" readonly style="background:rgba(0,0,0,0.8); color:#00ff00;"></textarea>
                             <button type="button" class="cyber-button mt-2" onclick="kopyala('privateKey')">
                                 Kopyala
@@ -48,14 +48,14 @@
                 </div>
 
                 <div class="cyber-section mb-4" style="position:relative; z-index:2; pointer-events:auto;">
-                    <h3 class="cyber-title mb-3">2. Metin Şifreleme</h3>
+                    <h3 class="cyber-title mb-3">Metin Encryption</h3>
                     <div class="form-group mb-3">
                         <label class="cyber-text">Şifrelenecek Metin:</label>
                         <textarea id="metin" class="form-control cyber-input" rows="3" placeholder="Şifrelemek istediğiniz metni buraya yazın..."></textarea>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label class="cyber-text">Public Key (Açık Anahtar):</label>
+                        <label class="cyber-text">Public Key:</label>
                         <textarea id="sifrelemePublicKey" class="form-control cyber-input" rows="4" placeholder="Şifreleme için public key'i buraya yapıştırın..."></textarea>
                     </div>
 

@@ -3,16 +3,16 @@
     Layout = "_Layout";
 }
 
-<div class="container mt-5">
+<div class="container mt-5 cyber-theme">
     <div class="row justify-content-center mb-4">
         <div class="col-md-8">
             <div class="btn-group w-100" role="group">
                 <a href="@Url.Action("Index")" class="btn btn-success cyber-button">
                     <i class="fas fa-lock"></i> ENCRYPT
                 </a>
-                <a href="#" class="btn btn-success cyber-button" style="pointer-events:none; background-color:rgba(0,255,0,0.08); box-shadow:0 0 10px #00ff00, 0 0 20px #00ff0033 inset;" tabindex="-1" aria-disabled="true">
+                <button type="button" class="btn btn-success cyber-button active">
                     <i class="fas fa-unlock"></i> DECRYPT
-                </a>
+                </button>
             </div>
         </div>
     </div>
