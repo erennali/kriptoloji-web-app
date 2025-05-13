@@ -4,6 +4,18 @@
 }
 
 <div class="container mt-5">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            <div class="btn-group w-100" role="group">
+                <a href="@Url.Action("Index")" class="btn btn-success cyber-button">
+                    <i class="fas fa-lock"></i> ENCRYPT
+                </a>
+                <button type="button" class="btn btn-success cyber-button active">
+                    <i class="fas fa-unlock"></i> DECRYPT
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="cyber-card p-4">
@@ -20,7 +32,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <button id="sifreCoz" class="cyber-button">Şifre Çöz</button>
+                    <button type="button" id="sifreCoz" class="cyber-button">Şifre Çöz</button>
                 </div>
 
                 <div id="sonuc" class="form-group mb-3" style="display: none;">
@@ -33,26 +45,46 @@
 </div>
 
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#sifreCoz").click(function() {
-                var sifreliMetin = $("#sifreliMetin").val();
-                var privateKey = $("#privateKey").val();
-
-                if (!sifreliMetin || !privateKey) {
-                    alert("Lütfen şifrelenmiş metin ve private key giriniz!");
-                    return;
-                }
-
-                $.post("/RSA/SifreCoz", { sifreliMetin: sifreliMetin, privateKey: privateKey }, function(data) {
-                    if (data.success) {
-                        $("#metin").val(data.metin);
-                        $("#sonuc").show();
-                    } else {
-                        alert(data.message);
+        document.addEventListener('DOMContentLoaded', function() {
+            var sifreCozBtn = document.getElementById('sifreCoz');
+            if (sifreCozBtn) {
+                sifreCozBtn.addEventListener('click', function() {
+                    var sifreliMetin = document.getElementById('sifreliMetin').value;
+                    var privateKey = document.getElementById('privateKey').value;
+                    if (!sifreliMetin || !privateKey) {
+                        alert("Lütfen şifrelenmiş metin ve private key giriniz!");
+                        return;
                     }
+                    var button = this;
+                    button.disabled = true;
+                    button.textContent = 'Çözülüyor...';
+                    fetch('/RSA/SifreCoz', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'sifreliMetin=' + encodeURIComponent(sifreliMetin) + '&privateKey=' + encodeURIComponent(privateKey)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('metin').value = data.metin;
+                            document.getElementById('sonuc').style.display = 'block';
+                        } else {
+                            alert(data.message);
+                        }
+                        button.disabled = false;
+                        button.textContent = 'Şifre Çöz';
+                    })
+                    .catch(error => {
+                        alert("Çözme sırasında bir hata oluştu!");
+                        button.disabled = false;
+                        button.textContent = 'Şifre Çöz';
+                    });
                 });
-            });
+            }
         });
     </script>
 } 

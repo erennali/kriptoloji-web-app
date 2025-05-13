@@ -1,7 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using KriptolojiWebApp.Services;
+using KriptolojiWebApp.Models;
 
 namespace KriptolojiWebApp.Controllers;
+
+public class RSASifreleRequest
+{
+    public string metin { get; set; }
+    public string publicKey { get; set; }
+}
 
 public class RSAController : Controller
 {
@@ -28,11 +35,11 @@ public class RSAController : Controller
     }
 
     [HttpPost]
-    public IActionResult Sifrele(string metin, string publicKey)
+    public IActionResult Sifrele([FromBody] RSASifreleRequest request)
     {
         try
         {
-            var sifreliMetin = _rsaService.Sifrele(metin, publicKey);
+            var sifreliMetin = _rsaService.Sifrele(request.metin, request.publicKey);
             return Json(new { success = true, sifreliMetin });
         }
         catch (Exception ex)
