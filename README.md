@@ -1,4 +1,5 @@
 # Kriptoloji Web Uygulaması
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 24 39" src="https://github.com/user-attachments/assets/8c54f251-d6fe-475b-8fb9-164e8496fd1d" />
 
 Bu proje, modern kriptografi algoritmalarını kullanarak güvenli veri şifreleme ve şifre çözme işlemlerini gerçekleştiren bir web uygulamasıdır. AES, RSA ve SHA-256 gibi güçlü kriptografi algoritmalarını kullanarak verilerinizi güvenli bir şekilde korumanızı sağlar.
 
@@ -6,6 +7,8 @@ Bu proje, modern kriptografi algoritmalarını kullanarak güvenli veri şifrele
 
 ### AES (Advanced Encryption Standard)
 AES, simetrik şifreleme algoritmasıdır ve günümüzde en yaygın kullanılan şifreleme standartlarından biridir.
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 23 18" src="https://github.com/user-attachments/assets/039bb689-0712-408c-b30b-cb9d46c5556a" />
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 23 46" src="https://github.com/user-attachments/assets/a7c9f643-c7ef-4fd2-baaf-bcf8dea31d05" />
 
 #### Özellikleri:
 - 128, 192 veya 256 bit anahtar uzunluğu
@@ -21,6 +24,8 @@ AES, simetrik şifreleme algoritmasıdır ve günümüzde en yaygın kullanılan
 
 ### RSA (Rivest-Shamir-Adleman)
 RSA, asimetrik şifreleme algoritmasıdır ve açık anahtar kriptografisinin temelini oluşturur.
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 24 13" src="https://github.com/user-attachments/assets/76dba225-bd89-4483-9bda-cb401eee105a" />
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 24 29" src="https://github.com/user-attachments/assets/f3f817c2-3f4f-41c9-a216-8d4a3f7d4b45" />
 
 #### Özellikleri:
 - Asimetrik şifreleme (farklı anahtarlar ile şifreleme ve şifre çözme)
@@ -36,6 +41,8 @@ RSA, asimetrik şifreleme algoritmasıdır ve açık anahtar kriptografisinin te
 
 ### SHA-256 (Secure Hash Algorithm 256-bit)
 SHA-256, kriptografik hash fonksiyonudur ve veri bütünlüğünü sağlamak için kullanılır.
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 22 19" src="https://github.com/user-attachments/assets/3ac94f48-c732-402c-a4ad-1525896fcca3" />
+<img width="1512" alt="Ekran Resmi 2025-05-14 13 22 53" src="https://github.com/user-attachments/assets/88b79c62-579d-42c7-8141-bd0926485c20" />
 
 #### Özellikleri:
 - 256-bit çıktı uzunluğu
@@ -67,25 +74,6 @@ SHA-256, kriptografik hash fonksiyonudur ve veri bütünlüğünü sağlamak iç
 - Güvenli veri depolama
 - Şifreleme anahtarlarının güvenli saklanması
 
-## 💻 Teknik Detaylar
-
-### AES Şifreleme
-```javascript
-// AES şifreleme örneği
-const encryptedData = await aesEncrypt(data, key);
-```
-
-### RSA Şifreleme
-```javascript
-// RSA şifreleme örneği
-const encryptedData = await rsaEncrypt(data, publicKey);
-```
-
-### SHA-256 Hash
-```javascript
-// SHA-256 hash örneği
-const hash = await sha256(data);
-```
 
 ## 🔧 Kurulum
 
